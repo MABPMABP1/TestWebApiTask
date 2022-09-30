@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "bbbfcbd7-2a32-4d9e-87db-2068c2655861",
+		"name": "Data test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Missing authorization header",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Data/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Data",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empty authorization header",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Data/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Data",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong authorization header",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Data/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Data",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expired token request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "00000000-0000-0000-0000-000000000000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Data/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Data",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data request for \"Default user' with default token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "11111111-1111-1111-1111-111111111111",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Delay1\": 3,\r\n    \"Delay2\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Data/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Data",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data request(valid token required)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "11111111-1111-1111-1111-111111111111",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Delay1\": 3,\r\n    \"Delay2\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Data/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Data",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

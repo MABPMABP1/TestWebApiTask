@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "c24cd4eb-7455-48d0-9686-61d81bf794a6",
+		"name": "Auth test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Empty auth request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Login\": \"\",\r\n    \"Password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Auth/getToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Auth",
+						"getToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong password request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Login\": \"Admin\",\r\n    \"Password\": \"TestPass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Auth/getToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Auth",
+						"getToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid creds request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Login\": \"Admin\",\r\n    \"Password\": \"StrongPassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Auth/getToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Auth",
+						"getToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reissuse token for 'Default user'",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Login\": \"Default user\",\r\n    \"Password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/Auth/getToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"Auth",
+						"getToken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

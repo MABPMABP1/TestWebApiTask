@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "ff101aaa-d86a-4520-8323-c82a1e9515f8",
+		"name": "Errors test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Raise server error",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5083/api/ErrorsExample",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5083",
+					"path": [
+						"api",
+						"ErrorsExample"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
